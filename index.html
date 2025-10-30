@@ -76,12 +76,8 @@
         <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Latest Articles</h2>
         
         <!-- Categories Filter -->
-        <div data-aos="fade-up" class="flex flex-wrap justify-center gap-3 mb-10">
-            <button class="px-6 py-2 bg-rose-600 text-white rounded-full font-medium hover:bg-rose-700 transition-colors shadow-sm">All Articles</button>
-            <button class="px-6 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-rose-50 transition-colors shadow-sm">Nail Art</button>
-            <button class="px-6 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-rose-50 transition-colors shadow-sm">Fashion</button>
-            <button class="px-6 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-rose-50 transition-colors shadow-sm">Street Style</button>
-            <button class="px-6 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-rose-50 transition-colors shadow-sm">Trends</button>
+        <div id="category-filter" data-aos="fade-up" class="flex flex-wrap justify-center gap-3 mb-10">
+            <!-- Will be populated by JavaScript -->
         </div>
 
         <!-- Articles Grid -->
@@ -117,12 +113,17 @@
       let currentSlide = 0;
       let featuredArticlesData = [];
       let autoPlayInterval;
+      let allArticlesData = [];
+      let currentCategory = 'all';
 
       // Load articles from JSON
       async function loadArticles() {
         try {
           const response = await fetch('/data/articles.json');
           const data = await response.json();
+          
+          // Store all articles for filtering
+          allArticlesData = data.latestArticles || [];
           
           // Render featured articles carousel
           if (data.featuredArticles && data.featuredArticles.length > 0) {
@@ -131,14 +132,61 @@
             initCarousel();
           }
           
+          // Generate category buttons
+          renderCategoryFilter(allArticlesData);
+          
           // Render latest articles
-          if (data.latestArticles && data.latestArticles.length > 0) {
-            renderLatestArticles(data.latestArticles);
+          if (allArticlesData.length > 0) {
+            renderLatestArticles(allArticlesData);
           }
           
         } catch (error) {
           console.error('Error loading articles:', error);
         }
+      }
+
+      // Generate category filter buttons
+      function renderCategoryFilter(articles) {
+        const categories = ['all', ...new Set(articles.map(a => a.category))];
+        const container = document.getElementById('category-filter');
+        
+        container.innerHTML = categories.map(category => {
+          const isActive = category === currentCategory;
+          const displayName = category === 'all' ? 'All Articles' : category;
+          const activeClass = isActive 
+            ? 'bg-rose-600 text-white' 
+            : 'bg-white text-gray-700 hover:bg-rose-50';
+          
+          return `
+            <button 
+              onclick="filterByCategory('${category}')" 
+              data-category="${category}"
+              class="category-btn px-6 py-2 ${activeClass} rounded-full font-medium transition-colors shadow-sm">
+              ${displayName}
+            </button>
+          `;
+        }).join('');
+      }
+
+      // Filter articles by category
+      function filterByCategory(category) {
+        currentCategory = category;
+        
+        // Update button styles
+        document.querySelectorAll('.category-btn').forEach(btn => {
+          if (btn.dataset.category === category) {
+            btn.className = 'category-btn px-6 py-2 bg-rose-600 text-white rounded-full font-medium transition-colors shadow-sm';
+          } else {
+            btn.className = 'category-btn px-6 py-2 bg-white text-gray-700 hover:bg-rose-50 rounded-full font-medium transition-colors shadow-sm';
+          }
+        });
+        
+        // Filter and render articles
+        const filteredArticles = category === 'all' 
+          ? allArticlesData 
+          : allArticlesData.filter(a => a.category === category);
+        
+        renderLatestArticles(filteredArticles);
       }
 
       function renderFeaturedCarousel(articles) {
