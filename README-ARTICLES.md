@@ -2,6 +2,18 @@
 
 Panduan lengkap untuk menambahkan artikel baru ke blog Linexs.
 
+## 🎯 Struktur Baru (External CSS + JS)
+
+**Keuntungan:**
+- ✅ **Tidak perlu copy-paste** styles & scripts lagi
+- ✅ **Update sekali**, semua artikel ter-update
+- ✅ **Browser cache** CSS/JS = loading lebih cepat
+- ✅ **Artikel HTML lebih clean** & mudah dibaca
+
+**File Shared:**
+- `/css/article.css` → Semua styles (progress bar, Pinterest pin, tooltip)
+- `/js/article.js` → Semua functions (share, copy, pin images)
+
 ## 🚀 Quick Start
 
 ### Step 1: Copy Template Artikel
@@ -22,12 +34,37 @@ Buka file artikel baru Anda dan ganti placeholder berikut:
 
 **Konten Artikel:**
 - `[CATEGORY]` → Kategori (Nail Art / Fashion / Street Style / Trends)
-- `[DATE]` → Tanggal publikasi
-- `[SUBTITLE / TAGLINE]` → Tagline menarik
+- `[DATE]` → Tanggal publikasi (contoh: October 28, 2025)
+- `[ARTICLE SHORT TITLE]` → Versi singkat untuk breadcrumb
 - `[INTRODUCTION PARAGRAPH]` → Paragraf pembuka
 - `[HEADING 1-3]` → Judul section
 - `[CONTENT PARAGRAPH]` → Isi konten
 - Ganti gambar placeholder dengan gambar Anda
+
+**Script Initialization:**
+Ganti di bagian akhir file:
+```html
+<script>
+  initArticle({
+    id: 'nama-artikel-unik',  // Sama dengan ID di JSON
+    category: 'Fashion'        // Sama dengan category di JSON
+  });
+</script>
+```
+
+**Fitur Otomatis Yang Sudah Built-in:**
+- ✅ Reading Progress Bar (gradient rose di atas)
+- ✅ Social Share Buttons (WhatsApp, Pinterest, Copy Link)
+- ✅ Pinterest Pin Button (hover pada gambar)
+- ✅ Copy Link Tooltip (smooth animation)
+- ✅ Breadcrumb Navigation (dengan category filter)
+- ✅ Mobile Responsive Design
+
+**TIDAK PERLU:**
+- ❌ Copy-paste `<style>` tags
+- ❌ Copy-paste JavaScript functions
+- ❌ Khawatir tentang compatibility
+- ❌ Update manual di setiap artikel
 
 ### Step 3: Tambahkan ke articles.json
 

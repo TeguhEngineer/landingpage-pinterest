@@ -31,81 +31,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
-         body {
-             font-family: 'Inter', sans-serif;
-         }
-         /* Reading Progress Bar */
-         #reading-progress {
-             position: fixed;
-             top: 0;
-             left: 0;
-             width: 0%;
-             height: 4px;
-             background: linear-gradient(90deg, #be123c, #fb7185);
-             z-index: 999;
-             transition: width 0.1s ease;
-         }
-         /* Pinterest Pin Button on Image Hover */
-         .article-image-container {
-             position: relative;
-             overflow: hidden;
-         }
-         .pinterest-pin-btn {
-             position: absolute;
-             top: 8px;
-             right: 8px;
-             background: #e60023;
-             color: white;
-             padding: 6px 12px;
-             border-radius: 20px;
-             font-weight: 600;
-             font-size: 12px;
-             opacity: 0;
-             transform: translateY(-10px);
-             transition: all 0.3s ease;
-             cursor: pointer;
-             box-shadow: 0 4px 12px rgba(230, 0, 35, 0.4);
-         }
-         @media (min-width: 768px) {
-             .pinterest-pin-btn {
-                 top: 12px;
-                 right: 12px;
-                 padding: 10px 16px;
-                 font-size: 14px;
-             }
-         }
-         .article-image-container:hover .pinterest-pin-btn {
-             opacity: 1;
-             transform: translateY(0);
-         }
-         .pinterest-pin-btn:hover {
-             background: #ad081b;
-             box-shadow: 0 6px 16px rgba(230, 0, 35, 0.6);
-         }
-         /* Copy Link Tooltip */
-         #copy-tooltip {
-             position: fixed;
-             bottom: 20px;
-             left: 50%;
-             transform: translateX(-50%) translateY(100px);
-             background: #1f2937;
-             color: white;
-             padding: 12px 24px;
-             border-radius: 8px;
-             font-size: 14px;
-             font-weight: 500;
-             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-             opacity: 0;
-             transition: all 0.3s ease;
-             z-index: 1000;
-             pointer-events: none;
-         }
-         #copy-tooltip.show {
-             opacity: 1;
-             transform: translateX(-50%) translateY(0);
-         }
-    </style>
+    
+    <!-- Article Styles -->
+    <link rel="stylesheet" href="../css/article.css">
 </head>
 <body class="bg-gradient-to-br from-rose-50 to-sky-50">
 
@@ -234,85 +162,15 @@
     <!-- <script type='text/javascript' src='//pl123456.profitablegate.com/...'></script> -->
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Article Scripts -->
+    <script src="../js/article.js"></script>
     <script>
-      AOS.init({
-        duration: 800,
-        once: true,
+      // Initialize article with specific data
+      initArticle({
+        id: 'fall-nails-2025',
+        category: 'Nail Art'
       });
-
-      // Reading Progress Bar
-      window.addEventListener('scroll', () => {
-        const article = document.querySelector('article');
-        const scrollTop = window.pageYOffset;
-        const articleHeight = article.offsetHeight;
-        const articleTop = article.offsetTop;
-        const viewportHeight = window.innerHeight;
-        
-        // Calculate how much of the article has been scrolled through
-        // Progress reaches 100% when bottom of viewport reaches bottom of article
-        const scrollProgress = ((scrollTop + viewportHeight - articleTop) / articleHeight) * 100;
-        const progressBar = document.getElementById('reading-progress');
-        progressBar.style.width = Math.min(Math.max(scrollProgress, 0), 100) + '%';
-      });
-
-      // Social Share Functions
-      function shareToWhatsApp() {
-        const text = document.title;
-        const url = window.location.href;
-        window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
-      }
-
-      function pinToPinterest() {
-        const url = window.location.href;
-        const description = document.querySelector('meta[name="description"]').content;
-        const image = document.querySelector('article img').src;
-        window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(image)}&description=${encodeURIComponent(description)}`, '_blank', 'width=750,height=550');
-      }
-
-      function copyLink() {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-          showCopyTooltip();
-        });
-      }
-
-      function showCopyTooltip() {
-        // Create tooltip if doesn't exist
-        let tooltip = document.getElementById('copy-tooltip');
-        if (!tooltip) {
-          tooltip = document.createElement('div');
-          tooltip.id = 'copy-tooltip';
-          tooltip.innerHTML = '✓ Link Copyed!';
-          document.body.appendChild(tooltip);
-        }
-        
-        // Show tooltip
-        tooltip.classList.add('show');
-        
-        // Hide after 2 seconds
-        setTimeout(() => {
-          tooltip.classList.remove('show');
-        }, 2000);
-      }
-
-      // Pinterest Pin Button on Images
-      document.querySelectorAll('article img').forEach(img => {
-        const container = document.createElement('div');
-        container.className = 'article-image-container';
-        img.parentNode.insertBefore(container, img);
-        container.appendChild(img);
-        
-        const pinBtn = document.createElement('button');
-        pinBtn.className = 'pinterest-pin-btn';
-        pinBtn.innerHTML = '📌 Pin';
-        pinBtn.onclick = (e) => {
-          e.preventDefault();
-          const imgUrl = img.src;
-          const description = img.alt || document.title;
-          window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&media=${encodeURIComponent(imgUrl)}&description=${encodeURIComponent(description)}`, '_blank', 'width=750,height=550');
-        };
-        container.appendChild(pinBtn);
-      });
-
     </script>
 </body>
 </html>

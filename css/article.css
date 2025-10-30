@@ -1,0 +1,86 @@
+/* 
+ * Article Page Styles
+ * Centralized styles for all article pages
+ */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Reading Progress Bar */
+#reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #be123c, #fb7185);
+    z-index: 999;
+    transition: width 0.1s ease;
+}
+
+/* Pinterest Pin Button on Image Hover */
+.article-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.pinterest-pin-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #e60023;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(230, 0, 35, 0.4);
+}
+
+@media (min-width: 768px) {
+    .pinterest-pin-btn {
+        top: 12px;
+        right: 12px;
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+.article-image-container:hover .pinterest-pin-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pinterest-pin-btn:hover {
+    background: #ad081b;
+    box-shadow: 0 6px 16px rgba(230, 0, 35, 0.6);
+}
+
+/* Copy Link Tooltip */
+#copy-tooltip {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #1f2937;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+#copy-tooltip.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
