@@ -53,32 +53,87 @@
         </div>
     </header>
 
-    <!-- Daftar Artikel -->
-    <section id="articles" class="max-w-6xl mx-auto px-6 py-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Latest Articles</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Artikel 1 -->
-            <a href="/fall-nails.html" class="block">
-                <article data-aos="fade-up" class="bg-white rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                    <img src="/image/benner-fall-nails.webp" alt="Abstract illustration of AI and technology" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-rose-700 mb-3">10 Cozy Fall Nail Designs for 2025</h3>
-                        <p class="text-gray-600 mb-4">Get inspired for your next manicure with these stunning autumn-inspired nail art ideas, from warm tones to subtle shimmers.</p>
-                        <p class="text-sm text-gray-500">October 28, 2025</p>
-                    </div>
-                </article>
-            </a>
+    <!-- Categories Section -->
+    <section class="max-w-6xl mx-auto px-6 py-8">
+        <div data-aos="fade-up" class="flex flex-wrap justify-center gap-3">
+            <button class="px-6 py-2 bg-rose-600 text-white rounded-full font-medium hover:bg-rose-700 transition-colors shadow-sm">All Articles</button>
+            <button class="px-6 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-rose-50 transition-colors shadow-sm">Nail Art</button>
+            <button class="px-6 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-rose-50 transition-colors shadow-sm">Fashion</button>
+            <button class="px-6 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-rose-50 transition-colors shadow-sm">Street Style</button>
+            <button class="px-6 py-2 bg-white text-gray-700 rounded-full font-medium hover:bg-rose-50 transition-colors shadow-sm">Trends</button>
         </div>
     </section>
 
-    <!-- Tentang Saya -->
-    <section id="about" class="max-w-4xl mx-auto px-6 pb-16 pt-5">
-        <div data-aos="fade-up" class="bg-white rounded-2xl shadow-md p-8 md:p-10">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">About Me</h2>
-            <p class="text-gray-600 text-center text-lg leading-relaxed">
-                I am a student with a passion for fashion and international style. 
-                This blog is my creative space to share outfit ideas and explore the latest trends.
-            </p>
+    <!-- Featured Article -->
+    <section class="max-w-6xl mx-auto px-6 py-8">
+        <a href="/fall-nails.html" class="block">
+            <article data-aos="fade-up" class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="/image/benner-fall-nails.webp" alt="10 Cozy Fall Nail Designs for 2025" class="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                        <span class="inline-block px-4 py-1 bg-rose-100 text-rose-700 rounded-full text-sm font-semibold mb-4 w-fit">Featured Article</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 group-hover:text-rose-700 transition-colors">10 Cozy Fall Nail Designs for 2025</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed text-lg">Get inspired for your next manicure with these stunning autumn-inspired nail art ideas, from warm tones to subtle shimmers perfect for the season.</p>
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-500">October 28, 2025</p>
+                            <span class="text-rose-600 font-semibold group-hover:translate-x-2 transition-transform">Read More →</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </a>
+    </section>
+
+    <!-- Latest Articles Grid -->
+    <section id="articles" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-10">Latest Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Artikel Placeholder 1 -->
+            <a href="#" class="block">
+                <article data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://placehold.co/400x300/fda4af/ffffff?text=Winter+Fashion+2025" alt="Winter Fashion Trends" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-rose-700 rounded-full text-xs font-semibold">Fashion</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-rose-700 transition-colors">Winter Fashion Trends 2025</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Discover the hottest winter fashion trends that will keep you stylish and warm this season.</p>
+                        <p class="text-sm text-gray-500">Coming Soon</p>
+                    </div>
+                </article>
+            </a>
+
+            <!-- Artikel Placeholder 2 -->
+            <a href="#" class="block">
+                <article data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://placehold.co/400x300/93c5fd/ffffff?text=Street+Style+Guide" alt="Street Style Guide" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-rose-700 rounded-full text-xs font-semibold">Street Style</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-rose-700 transition-colors">Ultimate Street Style Guide</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Master the art of street style with these essential tips and outfit inspirations from global fashion capitals.</p>
+                        <p class="text-sm text-gray-500">Coming Soon</p>
+                    </div>
+                </article>
+            </a>
+
+            <!-- Artikel Placeholder 3 -->
+            <a href="#" class="block">
+                <article data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://placehold.co/400x300/fbbf24/ffffff?text=Color+Palette+2025" alt="Color Palette 2025" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-rose-700 rounded-full text-xs font-semibold">Trends</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-rose-700 transition-colors">2025 Color Palette Guide</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Explore the must-have color combinations that will dominate fashion and beauty this year.</p>
+                        <p class="text-sm text-gray-500">Coming Soon</p>
+                    </div>
+                </article>
+            </a>
         </div>
     </section>
 
