@@ -84,3 +84,28 @@ body {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+/* Ad Banner Responsive Styles */
+.ad-banner-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.ad-banner-container iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hide horizontal scrollbar but keep functionality */
+.ad-banner-container::-webkit-scrollbar {
+    display: none;
+}
+
+.ad-banner-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
