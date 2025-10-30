@@ -305,8 +305,24 @@
         `).join('');
       }
 
+      // Check URL parameter for category filter
+      function checkURLParameter() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        
+        if (category) {
+          // Set current category and trigger filter
+          setTimeout(() => {
+            filterByCategory(category);
+            // Scroll to articles section
+            document.getElementById('articles').scrollIntoView({ behavior: 'smooth' });
+          }, 300);
+        }
+      }
+
       // Load articles when page loads
       loadArticles();
+      checkURLParameter();
     </script>
 </body>
 </html>
