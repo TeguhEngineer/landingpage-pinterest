@@ -32,6 +32,21 @@
         .typed-cursor {
             color: #be123c; /* Tailwind's rose-700 */
         }
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+        }
+        .carousel-slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .carousel-slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-rose-50 to-sky-50 min-h-screen">
@@ -40,8 +55,6 @@
         <nav class="max-w-6xl mx-auto flex justify-between items-center mb-12 md:mb-16">
             <a href="#" class="text-2xl font-bold text-rose-700 tracking-wide">Linexs</a>
             <div class="flex items-center space-x-6">
-                <a href="#articles" class="hidden md:block text-gray-600 hover:text-rose-600 transition-colors font-medium">Articles</a>
-                <a href="#about" class="hidden md:block text-gray-600 hover:text-rose-600 transition-colors font-medium">About</a>
                 <a href="https://www.pinterest.com/Linexssss/" target="_blank" class="bg-rose-500 hover:bg-rose-600 text-white font-medium py-2 px-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
                     Follow on Pinterest
                 </a>
@@ -65,75 +78,15 @@
     </section>
 
     <!-- Featured Article -->
-    <section class="max-w-6xl mx-auto px-6 py-8">
-        <a href="/fall-nails.html" class="block">
-            <article data-aos="fade-up" class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-                <div class="md:flex">
-                    <div class="md:w-1/2">
-                        <img src="/image/benner-fall-nails.webp" alt="10 Cozy Fall Nail Designs for 2025" class="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
-                        <span class="inline-block px-4 py-1 bg-rose-100 text-rose-700 rounded-full text-sm font-semibold mb-4 w-fit">Featured Article</span>
-                        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 group-hover:text-rose-700 transition-colors">10 Cozy Fall Nail Designs for 2025</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed text-lg">Get inspired for your next manicure with these stunning autumn-inspired nail art ideas, from warm tones to subtle shimmers perfect for the season.</p>
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm text-gray-500">October 28, 2025</p>
-                            <span class="text-rose-600 font-semibold group-hover:translate-x-2 transition-transform">Read More →</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </a>
+    <section id="featured-article" class="max-w-6xl mx-auto px-6 py-8">
+        <!-- Will be populated by JavaScript -->
     </section>
 
     <!-- Latest Articles Grid -->
     <section id="articles" class="max-w-6xl mx-auto px-6 py-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-10">Latest Articles</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Artikel Placeholder 1 -->
-            <a href="#" class="block">
-                <article data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://placehold.co/400x300/fda4af/ffffff?text=Winter+Fashion+2025" alt="Winter Fashion Trends" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-rose-700 rounded-full text-xs font-semibold">Fashion</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-rose-700 transition-colors">Winter Fashion Trends 2025</h3>
-                        <p class="text-gray-600 mb-4 line-clamp-2">Discover the hottest winter fashion trends that will keep you stylish and warm this season.</p>
-                        <p class="text-sm text-gray-500">Coming Soon</p>
-                    </div>
-                </article>
-            </a>
-
-            <!-- Artikel Placeholder 2 -->
-            <a href="#" class="block">
-                <article data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://placehold.co/400x300/93c5fd/ffffff?text=Street+Style+Guide" alt="Street Style Guide" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-rose-700 rounded-full text-xs font-semibold">Street Style</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-rose-700 transition-colors">Ultimate Street Style Guide</h3>
-                        <p class="text-gray-600 mb-4 line-clamp-2">Master the art of street style with these essential tips and outfit inspirations from global fashion capitals.</p>
-                        <p class="text-sm text-gray-500">Coming Soon</p>
-                    </div>
-                </article>
-            </a>
-
-            <!-- Artikel Placeholder 3 -->
-            <a href="#" class="block">
-                <article data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://placehold.co/400x300/fbbf24/ffffff?text=Color+Palette+2025" alt="Color Palette 2025" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-rose-700 rounded-full text-xs font-semibold">Trends</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-rose-700 transition-colors">2025 Color Palette Guide</h3>
-                        <p class="text-gray-600 mb-4 line-clamp-2">Explore the must-have color combinations that will dominate fashion and beauty this year.</p>
-                        <p class="text-sm text-gray-500">Coming Soon</p>
-                    </div>
-                </article>
-            </a>
+        <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Will be populated by JavaScript -->
         </div>
     </section>
 
@@ -159,6 +112,153 @@
         showCursor: true,
         cursorChar: '|',
       });
+
+      // Carousel State
+      let currentSlide = 0;
+      let featuredArticlesData = [];
+      let autoPlayInterval;
+
+      // Load articles from JSON
+      async function loadArticles() {
+        try {
+          const response = await fetch('/data/articles.json');
+          const data = await response.json();
+          
+          // Render featured articles carousel
+          if (data.featuredArticles && data.featuredArticles.length > 0) {
+            featuredArticlesData = data.featuredArticles;
+            renderFeaturedCarousel(data.featuredArticles);
+            initCarousel();
+          }
+          
+          // Render latest articles
+          if (data.latestArticles && data.latestArticles.length > 0) {
+            renderLatestArticles(data.latestArticles);
+          }
+          
+        } catch (error) {
+          console.error('Error loading articles:', error);
+        }
+      }
+
+      function renderFeaturedCarousel(articles) {
+        const container = document.getElementById('featured-article');
+        container.innerHTML = `
+          <div class="carousel-container relative" data-aos="fade-up">
+            ${articles.map((article, index) => `
+              <div class="carousel-slide ${index === 0 ? 'active' : ''}" data-slide="${index}">
+                <a href="${article.url}" class="block">
+                  <article class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                    <div class="md:flex">
+                      <div class="md:w-1/2">
+                        <img src="${article.image}" alt="${article.title}" class="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                      </div>
+                      <div class="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                        <span class="inline-block px-4 py-1 bg-rose-100 text-rose-700 rounded-full text-sm font-semibold mb-4 w-fit">Featured Article</span>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 group-hover:text-rose-700 transition-colors">${article.title}</h3>
+                        <div class="flex items-center justify-between">
+                          <p class="text-sm text-gray-500">${article.dateFormatted}</p>
+                          <span class="text-rose-600 font-semibold group-hover:translate-x-2 transition-transform">Read More →</span>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </div>
+            `).join('')}
+            
+            <!-- Navigation Buttons -->
+            ${articles.length > 1 ? `
+              <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-rose-700 rounded-full p-3 shadow-lg hover:shadow-xl transition-all z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-rose-700 rounded-full p-3 shadow-lg hover:shadow-xl transition-all z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+              
+              <!-- Indicators/Dots -->
+              <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                ${articles.map((_, index) => `
+                  <button onclick="goToSlide(${index})" class="carousel-dot w-3 h-3 rounded-full transition-all ${index === 0 ? 'bg-rose-700 w-8' : 'bg-white/70 hover:bg-white'}" data-dot="${index}"></button>
+                `).join('')}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      function initCarousel() {
+        if (featuredArticlesData.length > 1) {
+          // Auto-play every 5 seconds
+          autoPlayInterval = setInterval(() => {
+            nextSlide();
+          }, 5000);
+          
+          // Pause on hover
+          const carousel = document.querySelector('.carousel-container');
+          carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+          });
+          carousel.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(() => {
+              nextSlide();
+            }, 5000);
+          });
+        }
+      }
+
+      function goToSlide(index) {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => {
+          dot.classList.remove('bg-rose-700', 'w-8');
+          dot.classList.add('bg-white/70', 'w-3');
+        });
+        
+        slides[index].classList.add('active');
+        dots[index].classList.remove('bg-white/70', 'w-3');
+        dots[index].classList.add('bg-rose-700', 'w-8');
+        
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        const nextIndex = (currentSlide + 1) % featuredArticlesData.length;
+        goToSlide(nextIndex);
+      }
+
+      function prevSlide() {
+        const prevIndex = (currentSlide - 1 + featuredArticlesData.length) % featuredArticlesData.length;
+        goToSlide(prevIndex);
+      }
+
+      function renderLatestArticles(articles) {
+        const container = document.getElementById('articles-grid');
+        container.innerHTML = articles.map((article, index) => `
+          <a href="${article.url}" class="block">
+            <article data-aos="fade-up" data-aos-delay="${(index + 1) * 100}" class="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
+              <div class="relative overflow-hidden">
+                <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                <span class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-rose-700 rounded-full text-xs font-semibold">${article.category}</span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-rose-700 transition-colors">${article.title}</h3>
+                <p class="text-gray-600 mb-4 line-clamp-2">${article.description}</p>
+                <p class="text-sm text-gray-500">${article.dateFormatted}</p>
+              </div>
+            </article>
+          </a>
+        `).join('');
+      }
+
+      // Load articles when page loads
+      loadArticles();
     </script>
 </body>
 </html>

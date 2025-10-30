@@ -1,0 +1,44 @@
+{
+  "featuredArticles": [
+    {
+      "id": "fall-nails-2025",
+      "title": "10 Cozy Fall Nail Designs for 2025",
+      "category": "Nail Art",
+      "date": "2025-10-28",
+      "dateFormatted": "October 28, 2025",
+      "url": "/articles/fall-nails.html",
+      "image": "/image/benner-fall-nails.webp"
+    },
+    {
+      "id": "winter-fashion-2025",
+      "title": "Winter Fashion Trends 2025",
+      "category": "Fashion",
+      "date": "2025-11-01",
+      "dateFormatted": "November 1, 2025",
+      "url": "#",
+      "image": "https://placehold.co/800x500/fda4af/ffffff?text=Winter+Fashion+Trends"
+    }
+  ],
+  "latestArticles": [
+    {
+      "id": "street-style-guide-2025",
+      "title": "Ultimate Street Style Guide",
+      "description": "Master the art of street style with these essential tips and outfit inspirations from global fashion capitals.",
+      "category": "Street Style",
+      "date": "2025-11-05",
+      "dateFormatted": "Coming Soon",
+      "url": "#",
+      "image": "https://placehold.co/400x300/93c5fd/ffffff?text=Street+Style+Guide"
+    },
+    {
+      "id": "color-palette-2025",
+      "title": "2025 Color Palette Guide",
+      "description": "Explore the must-have color combinations that will dominate fashion and beauty this year.",
+      "category": "Trends",
+      "date": "2025-11-10",
+      "dateFormatted": "Coming Soon",
+      "url": "#",
+      "image": "https://placehold.co/400x300/fbbf24/ffffff?text=Color+Palette+2025"
+    }
+  ]
+}
