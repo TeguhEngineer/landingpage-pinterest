@@ -48,6 +48,24 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        /* Ad Banner Responsive Styles */
+        .ad-banner-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .ad-banner-container iframe {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Hide horizontal scrollbar but keep functionality */
+        .ad-banner-container::-webkit-scrollbar {
+            display: none;
+        }
+        .ad-banner-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-rose-50 to-sky-50 min-h-screen">
@@ -68,16 +86,19 @@
             <h1 class="text-4xl md:text-6xl font-bold text-rose-700 tracking-wide mb-4">Linexs <span id="typed-text"></span></h1>
             <p class="text-xl md:text-2xl text-gray-600">Your Daily Dose of Style Inspiration</p>
         </div>
-        <script type="text/javascript">
-        atOptions = {
-            'key' : '9bc6d1d69cc306f3e3165e947c3fa1a2',
-            'format' : 'iframe',
-            'height' : 90,
-            'width' : 728,
-            'params' : {}
-        };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/9bc6d1d69cc306f3e3165e947c3fa1a2/invoke.js"></script>
+        <!-- Ad Banner Container -->
+        <div class="ad-banner-container flex justify-center my-6">
+            <script type="text/javascript">
+            atOptions = {
+                'key' : '9bc6d1d69cc306f3e3165e947c3fa1a2',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/9bc6d1d69cc306f3e3165e947c3fa1a2/invoke.js"></script>
+        </div>
     </header>
    
 
