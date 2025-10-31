@@ -3,6 +3,37 @@
  * Centralized JavaScript for all article pages
  */
 
+// Pinterest Tag
+// Tracking pembaca yang klik link eksternal (misal ke Etsy/eBay)
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function () {
+    if (this.hostname !== window.location.hostname) {
+      pintrk('track', 'outbound_click', {
+        event_id: 'outbound_' + Date.now(),
+        destination: this.href
+      });
+    }
+  });
+});
+
+// Tracking pembaca yang sudah scroll 80% halaman (artinya baca sampai habis)
+window.addEventListener('scroll', function () {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight * 0.8) {
+    pintrk('track', 'article_read', {
+      event_id: 'read_' + Date.now(),
+      page: window.location.pathname
+    });
+  }
+});
+
+// Tracking pembaca yang membuka artikel
+pintrk('track', 'pagevisit', {
+  event_id: 'page_' + Date.now(),
+  page_title: document.title,
+  page_url: window.location.href
+});
+
+
 // Initialize AOS (Animate On Scroll)
 AOS.init({
   duration: 800,
@@ -14,17 +45,17 @@ function initReadingProgress() {
   window.addEventListener('scroll', () => {
     const article = document.querySelector('article');
     if (!article) return;
-    
+
     const scrollTop = window.pageYOffset;
     const articleHeight = article.offsetHeight;
     const articleTop = article.offsetTop;
     const viewportHeight = window.innerHeight;
-    
+
     // Calculate how much of the article has been scrolled through
     // Progress reaches 100% when bottom of viewport reaches bottom of article
     const scrollProgress = ((scrollTop + viewportHeight - articleTop) / articleHeight) * 100;
     const progressBar = document.getElementById('reading-progress');
-    
+
     if (progressBar) {
       progressBar.style.width = Math.min(Math.max(scrollProgress, 0), 100) + '%';
     }
@@ -44,7 +75,7 @@ function pinToPinterest() {
   const description = descriptionMeta ? descriptionMeta.content : document.title;
   const firstImage = document.querySelector('article img');
   const image = firstImage ? firstImage.src : '';
-  
+
   window.open(
     `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(image)}&description=${encodeURIComponent(description)}`,
     '_blank',
@@ -67,10 +98,10 @@ function showCopyTooltip() {
     tooltip.innerHTML = '✓ Link Tersalin!';
     document.body.appendChild(tooltip);
   }
-  
+
   // Show tooltip
   tooltip.classList.add('show');
-  
+
   // Hide after 2 seconds
   setTimeout(() => {
     tooltip.classList.remove('show');
@@ -84,7 +115,7 @@ function initPinterestPinButtons() {
     container.className = 'article-image-container';
     img.parentNode.insertBefore(container, img);
     container.appendChild(img);
-    
+
     const pinBtn = document.createElement('button');
     pinBtn.className = 'pinterest-pin-btn';
     pinBtn.innerHTML = '📌 Pin';
@@ -106,10 +137,10 @@ function initPinterestPinButtons() {
 function initArticle(config = {}) {
   // Config can include article-specific data if needed
   // For example: { id: 'fall-nails-2025', category: 'Nail Art' }
-  
+
   initReadingProgress();
   initPinterestPinButtons();
-  
+
   // Log initialization (optional, can be removed in production)
   if (config.id) {
     console.log(`Article initialized: ${config.id}`);
