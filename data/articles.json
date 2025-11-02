@@ -7,16 +7,16 @@
       "date": "2025-10-28",
       "dateFormatted": "October 28, 2025",
       "url": "/articles/fall-nails.html",
-      "image": "/image/benner-fall-nails.webp"
+      "image": "/image/fall-nails/benner-fall-nails.webp"
     },
     {
-      "id": "winter-fashion-2025",
-      "title": "Winter Fashion Trends 2025",
+      "id": "outfit-ideas-2025",
+      "title": "Trendy Fall Outfit Ideas for Women",
       "category": "Fashion",
       "date": "2025-11-01",
       "dateFormatted": "November 1, 2025",
-      "url": "#",
-      "image": "https://placehold.co/800x500/fda4af/ffffff?text=Winter+Fashion+Trends"
+      "url": "/articles/fall-outfit.html",
+      "image": "/image/fall-outfit/cover.webp"
     }
   ],
   "latestArticles": [
@@ -28,17 +28,17 @@
       "date": "2025-10-28",
       "dateFormatted": "October 28, 2025",
       "url": "/articles/fall-nails.html",
-      "image": "/image/benner-fall-nails.webp"
+      "image": "/image/fall-nails/benner-fall-nails.webp"
     },
     {
-      "id": "color-palette-2025",
-      "title": "2025 Color Palette Guide",
-      "description": "Explore the must-have color combinations that will dominate fashion and beauty this year.",
-      "category": "Trends",
-      "date": "2025-11-10",
-      "dateFormatted": "Coming Soon",
-      "url": "#",
-      "image": "https://placehold.co/400x300/fbbf24/ffffff?text=Color+Palette+2025"
+      "id": "outfit-ideas-2025",
+      "title": "Trendy Fall Outfit Ideas for Women",
+      "description": "Discover the latest fashion trends for autumn and winter with these stylish outfit ideas for women. From cozy winter coats to trendy fall dresses, get inspired for your next wardrobe update.",
+      "category": "Fashion",
+      "date": "2025-11-01",
+      "dateFormatted": "November 1, 2025",
+      "url": "/articles/fall-outfit.html",
+      "image": "/image/fall-outfit/cover.webp"
     }
   ]
 }
