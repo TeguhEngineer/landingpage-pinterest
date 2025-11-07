@@ -1,6 +1,24 @@
 {
   "featuredArticles": [
     {
+      "id": "pumpkin-decor-2025",
+      "title": "DIY Pumpkin Painting Ideas for Home Decor",
+      "category": "Home Decor",
+      "date": "2025-11-07",
+      "dateFormatted": "November 7, 2025",
+      "url": "/articles/pumpkin-decor.html",
+      "image": "https://images.pexels.com/photos/5358791/pexels-photo-5358791.jpeg"
+    },
+    {
+      "id": "fall-hairstyles-2025",
+      "title": "Cute Fall Hairstyles You’ll Love",
+      "category": "Hairstyles",
+      "date": "2025-11-07",
+      "dateFormatted": "November 7, 2025",
+      "url": "/articles/fall-hairstyles.html",
+      "image": "https://images.pexels.com/photos/4668510/pexels-photo-4668510.jpeg"
+    },
+    {
       "id": "fall-nails-2025",
       "title": "10 Cozy Fall Nail Designs for 2025",
       "category": "Nail Art",
@@ -20,6 +38,26 @@
     }
   ],
   "latestArticles": [
+    {
+      "id": "pumpkin-decor-2025",
+      "title": "DIY Pumpkin Painting Ideas for Home Decor",
+      "description": "Brighten your home with 10 creative pumpkin painting ideas featuring metallics, patterns, and cozy textures perfect for fall decorating.",
+      "category": "Home Decor",
+      "date": "2025-11-07",
+      "dateFormatted": "November 7, 2025",
+      "url": "/articles/pumpkin-decor.html",
+      "image": "https://images.pexels.com/photos/5358791/pexels-photo-5358791.jpeg"
+    },
+    {
+      "id": "fall-hairstyles-2025",
+      "title": "Cute Fall Hairstyles You’ll Love",
+      "description": "Cozy braids, soft waves, and sleek twists to complement every sweater-weather outfit this fall season.",
+      "category": "Hairstyles",
+      "date": "2025-11-07",
+      "dateFormatted": "November 7, 2025",
+      "url": "/articles/fall-hairstyles.html",
+      "image": "https://images.pexels.com/photos/4668510/pexels-photo-4668510.jpeg"
+    },
     {
       "id": "fall-nails-2025",
       "title": "10 Cozy Fall Nail Designs for 2025",

@@ -95,7 +95,7 @@ function showCopyTooltip() {
   if (!tooltip) {
     tooltip = document.createElement('div');
     tooltip.id = 'copy-tooltip';
-    tooltip.innerHTML = '✓ Link Tersalin!';
+    tooltip.innerHTML = '✓ Link Copied!';
     document.body.appendChild(tooltip);
   }
 
