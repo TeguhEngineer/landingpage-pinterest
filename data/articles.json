@@ -19,6 +19,24 @@
       "image": "https://images.pexels.com/photos/4668510/pexels-photo-4668510.jpeg"
     },
     {
+      "id": "winter-outfit-2025",
+      "title": "12 Christmas Outfit Ideas for Every Party",
+      "category": "Fashion",
+      "date": "2025-11-16",
+      "dateFormatted": "November 16, 2025",
+      "url": "/articles/winter-outfit.html",
+      "image": "https://images.pexels.com/photos/14681435/pexels-photo-14681435.jpeg"
+    },
+    {
+      "id": "winter-nails-2025",
+      "title": "Winter Nail Art Designs for Holidays",
+      "category": "Nail Art",
+      "date": "2025-11-16",
+      "dateFormatted": "November 16, 2025",
+      "url": "/articles/winter-nails.html",
+      "image": "https://images.pexels.com/photos/5473441/pexels-photo-5473441.jpeg"
+    },
+    {
       "id": "fall-nails-2025",
       "title": "10 Cozy Fall Nail Designs for 2025",
       "category": "Nail Art",
@@ -57,6 +75,26 @@
       "dateFormatted": "November 7, 2025",
       "url": "/articles/fall-hairstyles.html",
       "image": "https://images.pexels.com/photos/4668510/pexels-photo-4668510.jpeg"
+    },
+    {
+      "id": "winter-outfit-2025",
+      "title": "12 Christmas Outfit Ideas for Every Party",
+      "description": "Twelve festive outfit formulas— from cozy gatherings to glam soirées—so you sparkle at every holiday event.",
+      "category": "Fashion",
+      "date": "2025-11-16",
+      "dateFormatted": "November 16, 2025",
+      "url": "/articles/winter-outfit.html",
+      "image": "https://images.pexels.com/photos/14681435/pexels-photo-14681435.jpeg"
+    },
+    {
+      "id": "winter-nails-2025",
+      "title": "Winter Nail Art Designs for Holidays",
+      "description": "Frosted tips, candy-cane stripes, and glitter-dipped looks to keep your holiday manicure shining all season.",
+      "category": "Nail Art",
+      "date": "2025-11-16",
+      "dateFormatted": "November 16, 2025",
+      "url": "/articles/winter-nails.html",
+      "image": "https://images.pexels.com/photos/5473441/pexels-photo-5473441.jpeg"
     },
     {
       "id": "fall-nails-2025",
